@@ -7,6 +7,11 @@
         Log in
       </p>
     </div>
+    <div v-if="_error">
+      <p class="bg-red-500 text-red-200 text-sm p-3 mb-5">
+        {{ _error }}
+      </p>
+    </div>
     <form @submit.prevent="onSubmit">
       <div class="flex justify-center items-center">
         <input
@@ -83,7 +88,8 @@ async function onSubmit() {
   });
   console.log(data);
   if (error.value) {
-    _error.value = error.value.data.error;
+    console.log(error);
+    _error.value = "login failed";
     return;
   }
 
