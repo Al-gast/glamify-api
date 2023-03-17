@@ -51,6 +51,7 @@
         >
           <p class="text-[#164D4D] font-inter font-bold">SUBMIT</p>
         </button>
+        <button @click="checkMe">Me</button>
       </div>
     </form>
     <div class="text-center">
@@ -74,6 +75,7 @@ function clicked() {
 }
 
 const url = "http://127.0.0.1:8000/api/auth/login";
+const url2 = "http://127.0.0.1:8000/api/auth/me";
 const _error = ref(null);
 
 const form = reactive({
@@ -86,7 +88,6 @@ async function onSubmit() {
     method: "post",
     body: form,
   });
-  console.log(data);
   if (error.value) {
     console.log(error);
     _error.value = "login failed";
@@ -94,10 +95,26 @@ async function onSubmit() {
   }
 
   const authCookie = useCookie("auth");
-  authCookie.value = true;
+  authCookie.value = data.value.access_token;
+
+  console.log(authCookie.value, "ini token dari cookie");
+
   const reload = useCookie("reload");
   reload.value = true;
   navigateTo("/");
+}
+const token = useCookie("auth");
+async function checkMe() {
+  const headers = {
+    Authorization: `Bearer ${token.value}`,
+  };
+  const { data, error } = await useFetch(url2, {
+    method: "post",
+    headers,
+  });
+
+  console.log(data, "ini dari me");
+  console.log(error, "ini error dari me");
 }
 </script>
 
