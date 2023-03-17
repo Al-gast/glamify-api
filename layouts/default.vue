@@ -203,10 +203,12 @@
 </template>
 
 <script setup>
-const auth = useCookie("auth", null);
+const auth = useCookie("auth");
+
+console.log(auth.value, "ini auth");
 
 const login = () => {
-  if (auth.value !== null) {
+  if (auth.value !== undefined) {
     return `Log out`;
   } else {
     return "Login / <br/> Sign up";
@@ -214,7 +216,7 @@ const login = () => {
 };
 
 const delCookie = () => {
-  auth.value = null;
+  auth.value = undefined;
 };
 </script>
 

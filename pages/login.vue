@@ -51,15 +51,15 @@
         >
           <p class="text-[#164D4D] font-inter font-bold">SUBMIT</p>
         </button>
-        <button @click="checkMe">Me</button>
+        <!-- <button @click="checkMe">Me</button> -->
       </div>
     </form>
     <div class="text-center">
-      <a
-        href="/signup"
+      <NuxtLink
+        to="/signup"
         class="text-[#FBF5E3] font-inter underline underline-offset-4 font-semibold"
         >Don't have an account yet? <br class="md:hidden" />
-        Sign up!</a
+        Sign up!</NuxtLink
       >
     </div>
   </div>
@@ -94,10 +94,10 @@ async function onSubmit() {
     return;
   }
 
-  const authCookie = useCookie("auth");
-  authCookie.value = data.value.access_token;
+  // const authCookie = useCookie("auth");
+  // authCookie.value = data.value.access_token;
 
-  console.log(authCookie.value, "ini token dari cookie");
+  // console.log(authCookie.value, "ini token dari cookie");
 
   const reload = useCookie("reload");
   reload.value = true;
