@@ -1,1 +1,1 @@
-export { default } from "file:///Users/senjadev/glamifyAPI/node_modules/@nuxt/vite-builder/dist/runtime/client.manifest.mjs"
+export { default } from "file:///Users/senjadev/glamify-api/node_modules/@nuxt/vite-builder/dist/runtime/client.manifest.mjs"

@@ -75,7 +75,7 @@
 </template>
 
 <script setup>
-const url = "http://127.0.0.1:8000/api/auth/register";
+const url = "http://127.0.0.1:8002/api/auth/register";
 const _error = ref(null);
 
 const form = reactive({

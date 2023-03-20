@@ -1,5 +1,5 @@
 
-import { defuFn } from '/Users/senjadev/glamifyAPI/node_modules/defu/dist/defu.mjs'
+import { defuFn } from '/Users/senjadev/glamify-api/node_modules/defu/dist/defu.mjs'
 
 const inlineConfig = {}
 
