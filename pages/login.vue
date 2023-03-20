@@ -100,8 +100,8 @@ async function checkMe() {
     headers,
   });
 
-  console.log(data, "ini dari me");
-  console.log(error, "ini error dari me");
+  // console.log(data, "ini dari me");
+  // console.log(error, "ini error dari me");
 }
 </script>
 

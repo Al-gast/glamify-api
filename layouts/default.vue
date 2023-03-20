@@ -205,7 +205,7 @@
 <script setup>
 const auth = useCookie("auth");
 
-console.log(auth.value, "ini auth");
+// console.log(auth.value, "ini auth");
 
 const login = () => {
   if (auth.value !== undefined) {
